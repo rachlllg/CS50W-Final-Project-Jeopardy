@@ -1,0 +1,211 @@
+body{
+    background-color: #eee2dc;
+}
+
+a{
+    text-decoration: none;
+    color: #123c69;
+}
+
+a:hover {
+    color: #ac3b61;
+}
+
+footer {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 0.75em;
+    background-color: #bab2b5;
+}
+
+.head{
+    background-color: #edc7b7;
+    color: #123c69;
+    text-align: center;
+    padding: 1.25em;
+    font-size: 2.5em;
+    margin-bottom: 0em;
+}
+
+.navbar {
+    background-color: #bab2b5;
+}
+
+.container {
+    margin-top: 2em;
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box {
+    background-color: #123c69;
+    border-radius: 4px;
+    padding-top: 45%;
+    padding-bottom: 45%;
+    text-align: center;
+    font-size: 1.5em;
+ }
+ 
+ .box:hover {
+    background-color: #ac3b61;
+ }
+
+ .col-lg-2, .col-md-4{
+    margin-bottom: 2em !important;
+    padding: 1em !important;
+    width: 30%;
+ }
+
+ #boxlink{
+    color: #eee2dc;
+ }
+
+ .formbody{
+    text-align: center;
+    margin-top:2em;
+ }
+
+ .formfield{
+    padding: 0.375rem 3rem 0.375rem 0.75rem;
+    margin-top: 0.25em;
+ }
+
+.submit{
+    margin-top:0.5em;
+    background-color: #123c69;
+    color: #eee2dc;
+}
+
+.submit:hover{
+    background-color: #ac3b61;
+    color:#eee2dc;
+}
+
+.center {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.message {
+    text-align: center;
+    color: red;
+    margin-top: 1em;
+}
+
+.score {
+    font-size: 1.5em;
+    color: #ac3b61;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+
+.jeopardy {
+    position: relative;
+    margin-top: 2em;
+    background-color: #123c69;
+    width: 75%;
+    min-width: 700px;
+    margin-bottom: 5em;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #eee2dc;
+    border: black solid 0.2em;
+}
+
+
+.clue {
+    background-color: #123c69;
+    color: #eee2dc;
+    border: none;
+    padding: 2em;
+}
+
+.clue:hover{
+    background-color: #ac3b61;
+}
+
+
+.jeorow {
+    border-bottom: black solid 0.2em;
+    flex-wrap: nowrap;
+    z-index:1000
+}
+
+
+.last {
+    border: none
+}
+
+
+.jeocol{
+    border-right: black solid 0.2em;
+
+}
+
+.popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position:absolute;
+    width: 95%;
+    height: 80%;
+    background-color: #eee2dc;
+    color: #123c69;
+    top: 80px;
+    left: 15px;
+    border: black solid 0.2em;
+}
+
+#popup-clue{
+    display: block;
+    font-size: 2.5em;
+    padding: 0em 0.5em 1em 0.5em;
+    max-height: 65%;
+}
+
+.choices{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    align-items: center
+}
+
+#popup-choice{
+    height: 100%;
+}
+
+.choice{
+    height: 100%;
+    padding: 0.5em;
+    border-radius: 5px;
+    color:#123c69;
+    background-color: #edc7b7;
+    box-shadow: 5px 5px 10px #bab2b5;
+}
+
+.choice:hover{
+    background-color: #eee2dc;
+    color:#123c69;
+}
+
+.choice:active{
+    box-shadow: none;
+}
+
+.cluetable {
+    margin-bottom: 3em;
+}
+
+#bread{
+    margin: 1em;
+    font-size: 0.8em;
+}
+
+

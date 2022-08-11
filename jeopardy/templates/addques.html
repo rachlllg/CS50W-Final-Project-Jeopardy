@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block head %}
+    {{category}}
+{% endblock %}
+
+
+{% block body %}
+
+    <a id="bread" href="/add/{{jeopardy.id}}"><< Back to Category Page</a>
+
+    {% if message %}
+            <div class="message">
+                {{message}}
+            </div>
+    {% endif %} 
+    <br>
+    <form action="/add/{{jeopardy.id}}/{{category.id}}" method="post" class="formbody">
+        {% csrf_token %}
+        {{question.as_p}}
+        <input class="btn submit" type="submit" value="Add New Clue">
+    </form>
+
+    <div class="center cluetable">
+        <strong>Clues added to the category:</strong>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Clue Value</th>
+                    <th scope="col">Clue</th>
+                    <th scope="col">Answer</th>
+                    <th scope="col">Choice One</th>
+                    <th scope="col">Choice Two</th>
+                    <th scope="col">Choice Three</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for question in questions %}
+                <tr>
+                        <td>{{question.cluevalue}}</td>
+                        <td>{{question.clue}}</td>
+                        <td>{{question.answer}}</td>
+                        <td>{{question.choiceone}}</td>
+                        <td>{{question.choicetwo}}</td>
+                        <td>{{question.choicethree}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <br>
+
+{% endblock %}

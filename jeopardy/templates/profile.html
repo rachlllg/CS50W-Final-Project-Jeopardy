@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block head %}
+    {{user}}'s Games
+
+{% endblock %}
+
+
+{% block body %}
+
+
+    <div class="container">
+        <div class="row">
+            {% for jeopardy in jeopardys %}
+            <div class="col-lg-3 col-md-4">
+                <div class="box"><a id="boxlink" href="/add/{{jeopardy.id}}">{{jeopardy.name}}</a></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

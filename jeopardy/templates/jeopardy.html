@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block head %}
+    {{jeopardy.name}}
+{% endblock %}
+
+
+{% block body %}
+    <div class="score">
+        Score: 
+    <div id="value">0</div>
+    </div>
+
+    <form action="{% url 'jeopardy' jeopardy.id %}" method="post" class="formbody">
+            {% csrf_token %}
+            <input class="btn submit" type="submit" name="Reset" value="Reset">
+    </form>
+
+    <div class="container jeopardy">
+        <div class="row jeorow">
+            {% for category in categorys %}
+            <div class="col">
+            <div>{{category.category}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row jeorow">
+            {% for question in questions %}
+            <div class="col jeocol">
+                <button type="button" class="clue" id="clue-{{question.0.id}}" onClick='show_clue(this.id)'>{{question.0.cluevalue}}</button>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row jeorow">
+            {% for question in questions %}
+            <div class="col jeocol">
+                <button type="button" class="clue" id="clue-{{question.1.id}}" onClick='show_clue(this.id)'>{{question.1.cluevalue}}</button>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row jeorow">
+            {% for question in questions %}
+            <div class="col jeocol">
+                <button type="button" class="clue" id="clue-{{question.2.id}}" onClick='show_clue(this.id)'>{{question.2.cluevalue}}</button>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row jeorow">
+            {% for question in questions %}
+            <div class="col jeocol" >
+                <button type="button" class="clue" id="clue-{{question.3.id}}" onClick='show_clue(this.id)'>{{question.3.cluevalue}}</button>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row jeorow last">
+            {% for question in questions %}
+            <div class="col jeocol">
+                <button type="button" class="clue" id="clue-{{question.4.id}}" onClick='show_clue(this.id)'>{{question.4.cluevalue}}</button>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="popup">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <div id="popup-clue">
+                clue
+            </div>
+            <div class="choices">
+                <div id="popup-choice">
+                    <button type="button" class="choice choiceone" onClick='answer_clue(this.id, this)'>choiceone</button>
+                </div>
+                <div id="popup-choice">
+                    <button type="button" class="choice choicetwo" onClick='answer_clue(this.id, this)'>choicetwo</button>
+                </div>
+                <div id="popup-choice">
+                    <button type="button" class="choice choicethree" onClick='answer_clue(this.id, this)'>choicethree</button>
+                </div>      
+            </div>
+        </div>
+    </div>
+    <br>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'script.js' %}"></script>
+{% endblock %}
