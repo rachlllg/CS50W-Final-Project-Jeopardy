@@ -82,7 +82,7 @@ Only the files which I made changes to are discussed here, the django files incl
 
 ## How to run the application
 1. Clone the repo to local directory
-2. Insall python3 and django if needed
-3. Within the directory, run: python3 manage.py runserver
+2. Within the directory, install Django using: python3 -m pip install Django
+3. Within the directory, run server using: python3 manage.py runserver
 4. Open the development server
 
